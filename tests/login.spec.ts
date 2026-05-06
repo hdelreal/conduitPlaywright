@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { HtttpRequests } from '../utils/http';
 import { test } from '../fixtures/baseTest';
 
 test.describe('Login tests', () => {
@@ -7,10 +8,12 @@ test.describe('Login tests', () => {
   
   })
 
-  test('Sign in to app', async ({ pm, page }) => {
+  test('Sign in to app', async ({ pm, page, request }) => {
     
-    console.log('veamos')
-    
+    const api = new HtttpRequests(request)
+    const response = await api.get('/api/tags')
+    expect(response.status()).toBe(200)
+
   });
 })
 
