@@ -22,8 +22,40 @@
         "metadata": {
           "actualWorkers": 1
         },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/Users/anibaldelreal/Desktop/Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/anibaldelreal/Desktop/Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "chromium",
         "name": "chromium",
+        "testDir": "/Users/anibaldelreal/Desktop/Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/anibaldelreal/Desktop/Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromiumUser",
+        "name": "chromiumUser",
         "testDir": "/Users/anibaldelreal/Desktop/Playwright/tests",
         "testIgnore": [],
         "testMatch": [
@@ -65,6 +97,48 @@
   },
   "suites": [
     {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authentication",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-07T18:30:09.856Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-40cd94755351b05daa4c",
+          "file": "auth.setup.ts",
+          "line": 8,
+          "column": 6
+        }
+      ]
+    },
+    {
       "title": "seed.spec.ts",
       "file": "seed.spec.ts",
       "column": 0,
@@ -95,8 +169,8 @@
                     }
                   ],
                   "expectedStatus": "skipped",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "chromiumUser",
+                  "projectName": "chromiumUser",
                   "results": [
                     {
                       "workerIndex": -1,
@@ -107,7 +181,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-07T18:04:01.341Z",
+                      "startTime": "2026-05-07T18:30:15.445Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -124,7 +198,7 @@
                   "status": "skipped"
                 }
               ],
-              "id": "11ceb7af692008938f3b-e93327a24cf4dbee4058",
+              "id": "11ceb7af692008938f3b-8a083e8844bdce0afeb1",
               "file": "seed.spec.ts",
               "line": 4,
               "column": 8
@@ -155,19 +229,19 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "chromiumUser",
+                  "projectName": "chromiumUser",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2398,
+                      "duration": 2196,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-07T18:04:02.219Z",
+                      "startTime": "2026-05-07T18:30:16.347Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -175,71 +249,41 @@
                   "status": "expected"
                 }
               ],
-              "id": "d2d3f88df070d751ab05-a4966ce93be52f0ef8f2",
+              "id": "d2d3f88df070d751ab05-5c110fbf8ba91744b13b",
               "file": "tasks.spec.ts",
               "line": 13,
               "column": 7
             },
             {
               "title": "Add New Article",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "chromiumUser",
+                  "projectName": "chromiumUser",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 7760,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/article/\u001b[39m\nReceived string:  \u001b[31m\"https://conduit.bondaracademy.com/editor\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://conduit.bondaracademy.com/editor\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/article/\u001b[39m\nReceived string:  \u001b[31m\"https://conduit.bondaracademy.com/editor\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://conduit.bondaracademy.com/editor\"\u001b[22m\n\n    at /Users/anibaldelreal/Desktop/Playwright/tests/tasks.spec.ts:24:24",
-                        "location": {
-                          "file": "/Users/anibaldelreal/Desktop/Playwright/tests/tasks.spec.ts",
-                          "column": 24,
-                          "line": 24
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mdashboard\u001b[33m.\u001b[39mclickOnMenuLink(\u001b[32m'New Article'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mnewArticle\u001b[33m.\u001b[39maddNewArticle(title\u001b[33m,\u001b[39m about\u001b[33m,\u001b[39m content\u001b[33m,\u001b[39m tag)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/article/\u001b[39m)\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m`${title}`\u001b[39m}))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mnewArticle\u001b[33m.\u001b[39mclickOnMenuLink(\u001b[32m'Home'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   })\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/anibaldelreal/Desktop/Playwright/tests/tasks.spec.ts",
-                            "column": 24,
-                            "line": 24
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/article/\u001b[39m\nReceived string:  \u001b[31m\"https://conduit.bondaracademy.com/editor\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://conduit.bondaracademy.com/editor\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mdashboard\u001b[33m.\u001b[39mclickOnMenuLink(\u001b[32m'New Article'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mnewArticle\u001b[33m.\u001b[39maddNewArticle(title\u001b[33m,\u001b[39m about\u001b[33m,\u001b[39m content\u001b[33m,\u001b[39m tag)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/article/\u001b[39m)\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m`${title}`\u001b[39m}))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[33mUserPM\u001b[39m\u001b[33m.\u001b[39mnewArticle\u001b[33m.\u001b[39mclickOnMenuLink(\u001b[32m'Home'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m   })\u001b[0m\n\u001b[2m    at /Users/anibaldelreal/Desktop/Playwright/tests/tasks.spec.ts:24:24\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 2918,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-07T18:04:06.141Z",
+                      "startTime": "2026-05-07T18:30:19.392Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/anibaldelreal/Desktop/Playwright/test-results/tasks-Login-tests-Add-New-Article-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/anibaldelreal/Desktop/Playwright/tests/tasks.spec.ts",
-                        "column": 24,
-                        "line": 24
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "d2d3f88df070d751ab05-d490d4e8b33773b4af18",
+              "id": "d2d3f88df070d751ab05-fc700dab5c5d39d7d16b",
               "file": "tasks.spec.ts",
               "line": 21,
               "column": 7
@@ -251,11 +295,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-07T18:04:01.288Z",
-    "duration": 12848.248,
-    "expected": 1,
+    "startTime": "2026-05-07T18:30:08.837Z",
+    "duration": 13667.703,
+    "expected": 3,
     "skipped": 1,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

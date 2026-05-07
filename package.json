@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "only-user": "npx playwright test --project=chromium --headed --workers=1"
+    "only-user": "npx playwright test --project=chromiumUser --headed --workers=1"
   },
   "keywords": [],
   "author": "",
