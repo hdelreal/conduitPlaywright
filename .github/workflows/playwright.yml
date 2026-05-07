@@ -1,7 +1,5 @@
 name: Playwright Tests
-with:
-  USER_EMAIL: ${{ secrets.USER_EMAIL }}
-  USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+
 on:
   push:
     branches: [ main, master ]
@@ -12,6 +10,9 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      USER_EMAIL: ${{ secrets.USER_EMAIL }}
+      USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
     steps:
     - uses: actions/checkout@v4
 
