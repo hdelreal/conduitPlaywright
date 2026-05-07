@@ -2,12 +2,14 @@
 | conduit application. It contains the locators and methods for interacting with the landing page. */
 
 import { expect, Locator, Page } from '@playwright/test';
+import { BasePage } from './basePage';
 
-export class LandingPage {
+export class LandingPage extends BasePage {
   readonly signInButton: Locator;
 
   constructor(page: Page) {
-    this.signInButton = page.getByRole('link', { name: 'Sign in' });
+    super(page);
+    this.signInButton = this.page.getByRole('link', { name: 'Sign in' });
   }
 
   async clickSignIn() {

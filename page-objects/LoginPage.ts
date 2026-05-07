@@ -3,15 +3,17 @@
 
 import { Locator, Page } from '@playwright/test';
 import dotenv from 'dotenv';
+import { BasePage } from './basePage';
 
 
-export class LoginPage {
+export class LoginPage extends BasePage{
   readonly newAccount: Locator;
   readonly email: Locator;
   readonly password: Locator;
   readonly signInButton: Locator;
 
   constructor(page: Page) {
+    super(page)
     this.newAccount = page.getByRole('link', { name: 'Need an account?' });
     this.email = page.getByRole('textbox', { name: 'Email' });
     this.password = page.getByRole('textbox', { name: 'Password' });

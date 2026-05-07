@@ -1,6 +1,12 @@
 import { test as base, Page, expect } from '@playwright/test';
 import { PageManager } from '../page-objects/pageManager';
 
+
+type MyFixtures = {
+    pm: PageManager;
+    UserPM: PageManager;
+}
+
 async function login (pm: PageManager, page: Page) {
     await page.goto('/');    
     await expect(page).toHaveTitle(/Conduit/);
@@ -10,10 +16,16 @@ async function login (pm: PageManager, page: Page) {
     await expect(page.getByRole('link', { name: 'New Article' })).toBeVisible()
 }
 
-export const test = base.extend<{ pm: PageManager }> ({
+export const test = base.extend<MyFixtures> ({
     pm: async ({ page }, use) => {
         const pm = new PageManager(page);
         await login(pm, page)
         await use(pm);
     },
+
+    UserPM: async ({ page }, use) => {
+        const pm = new PageManager(page);
+        await page.goto('/');
+        await use(pm);
+    }
 });
