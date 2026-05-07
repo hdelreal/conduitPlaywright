@@ -3,7 +3,7 @@ import config from '../playwright.config';
 
 export class HtttpRequests {
     private readonly request: APIRequestContext;
-    private baseUrl: string;
+    private baseUrl: any;
 
     constructor(request: APIRequestContext) {
         this.request = request

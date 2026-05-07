@@ -2,6 +2,8 @@
 | conduit application. It contains the locators and methods for interacting with the landing page. */
 
 import { Locator, Page } from '@playwright/test';
+import dotenv from 'dotenv';
+
 
 export class LoginPage {
   readonly newAccount: Locator;
@@ -17,8 +19,8 @@ export class LoginPage {
   }
 
   async login() {
-    await this.email.fill('testgen@test.com');
-    await this.password.fill('test12345678');
+    await this.email.fill(`${process.env.USER_EMAIL}`);
+    await this.password.fill(`${process.env.USER_PASSWORD}`);
     await this.signInButton.click();
   }
 }

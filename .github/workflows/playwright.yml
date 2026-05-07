@@ -1,4 +1,7 @@
 name: Playwright Tests
+with:
+  USER_EMAIL: ${{ secrets.USER_EMAIL }}
+  USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
 on:
   push:
     branches: [ main, master ]
