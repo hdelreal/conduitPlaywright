@@ -92,200 +92,89 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 1,
-    "webServer": null
+    "workers": 4,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://127.0.0.1:3000",
+      "reuseExistingServer": true
+    }
   },
   "suites": [
     {
-      "title": "auth.setup.ts",
-      "file": "auth.setup.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "authentication",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "setup",
-              "projectName": "setup",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3798,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-05-07T18:30:09.856Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "17e3fe6f4d9d8bd79c6b-40cd94755351b05daa4c",
-          "file": "auth.setup.ts",
-          "line": 8,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "title": "seed.spec.ts",
-      "file": "seed.spec.ts",
+      "title": "medication-form.spec.ts",
+      "file": "medication-form.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Test group",
-          "file": "seed.spec.ts",
-          "line": 3,
+          "title": "Medication Event Management page",
+          "file": "medication-form.spec.ts",
+          "line": 11,
           "column": 6,
           "specs": [
             {
-              "title": "seed",
-              "ok": true,
+              "title": "disables the medication form until Add is clicked and saves a new medication row",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
                     {
-                      "type": "skip",
-                      "location": {
-                        "file": "/Users/anibaldelreal/Desktop/Playwright/tests/seed.spec.ts",
-                        "line": 4,
-                        "column": 8
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18106,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\u001b[22m\n\n    at /Users/anibaldelreal/Desktop/Playwright/tests/medication-form.spec.ts:25:80",
+                        "location": {
+                          "file": "/Users/anibaldelreal/Desktop/Playwright/tests/medication-form.spec.ts",
+                          "column": 80,
+                          "line": 25
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m medPage\u001b[33m.\u001b[39maddNewMedication(medication)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.name}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.prescription}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.appRn}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/anibaldelreal/Desktop/Playwright/tests/medication-form.spec.ts",
+                            "column": 80,
+                            "line": 25
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//td[text()=\"New Test Med 20mg\"]/parent::tr')\u001b[22m\n\n\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m medPage\u001b[33m.\u001b[39maddNewMedication(medication)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.name}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.prescription}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`//td[text()=\"${medication.appRn}\"]/parent::tr`\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/anibaldelreal/Desktop/Playwright/tests/medication-form.spec.ts:25:80\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-09T01:02:23.291Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/anibaldelreal/Desktop/Playwright/test-results/medication-form-Medication-b9c87--saves-a-new-medication-row-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/anibaldelreal/Desktop/Playwright/tests/medication-form.spec.ts",
+                        "column": 80,
+                        "line": 25
                       }
                     }
                   ],
-                  "expectedStatus": "skipped",
-                  "projectId": "chromiumUser",
-                  "projectName": "chromiumUser",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-07T18:30:15.445Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "location": {
-                            "file": "/Users/anibaldelreal/Desktop/Playwright/tests/seed.spec.ts",
-                            "line": 4,
-                            "column": 8
-                          }
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
+                  "status": "unexpected"
                 }
               ],
-              "id": "11ceb7af692008938f3b-8a083e8844bdce0afeb1",
-              "file": "seed.spec.ts",
-              "line": 4,
-              "column": 8
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "tasks.spec.ts",
-      "file": "tasks.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Login tests",
-          "file": "tasks.spec.ts",
-          "line": 5,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Sign in to app",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromiumUser",
-                  "projectName": "chromiumUser",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2196,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-07T18:30:16.347Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d2d3f88df070d751ab05-5c110fbf8ba91744b13b",
-              "file": "tasks.spec.ts",
-              "line": 13,
-              "column": 7
-            },
-            {
-              "title": "Add New Article",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromiumUser",
-                  "projectName": "chromiumUser",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2918,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-07T18:30:19.392Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d2d3f88df070d751ab05-fc700dab5c5d39d7d16b",
-              "file": "tasks.spec.ts",
-              "line": 21,
+              "id": "7c96791d81dbdd6a063a-dd401fb37608299926e2",
+              "file": "medication-form.spec.ts",
+              "line": 12,
               "column": 7
             }
           ]
@@ -295,11 +184,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-07T18:30:08.837Z",
-    "duration": 13667.703,
-    "expected": 3,
-    "skipped": 1,
-    "unexpected": 0,
+    "startTime": "2026-07-09T01:02:21.220Z",
+    "duration": 22454.875,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

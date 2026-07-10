@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medication Event Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-brand">Medication Event Management</div>
+    <nav class="top-nav">
+      <a href="#">All Clients</a>
+      <a href="#">Client Insurance</a>
+      <a href="#">Client PRN / OTC</a>
+      <a href="#">Client Profile</a>
+      <a href="#">Client Protocol</a>
+      <a href="#" class="active">Event Schedules</a>
+      <a href="#">Management Reports</a>
+      <a href="#">Nurse Notes</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero-row">
+      <div>
+        <h1>Medication Event Management</h1>
+        <p class="patient-name">James Bond</p>
+        <p class="patient-allergy">ALLERGIES: <strong>amoxicillin, ativan</strong></p>
+      </div>
+      <button class="view-profile">View Profile</button>
+    </section>
+
+    <section class="med-list-card">
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <button class="toggle-button">Show Search Details</button>
+          <button class="toggle-button">Hide Client Medication</button>
+        </div>
+      </div>
+      <div class="table-actions">
+        <button id="add-button" type="button">Add</button>
+        <button id="save-button" type="button" disabled>Save Medication</button>
+        <button type="button">List All</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Name</th>
+              <th>Prescription</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Status</th>
+              <th>Updated By</th>
+              <th>Updated On</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">Select</a></td>
+              <td>Cool Med</td>
+              <td>testing for larger give window</td>
+              <td>12/11/2025</td>
+              <td>--</td>
+              <td>Active</td>
+              <td>Addy S</td>
+              <td>12/11/2025</td>
+            </tr>
+            <tr>
+              <td><a href="#">Select</a></td>
+              <td>Insulin Lantus 50 units</td>
+              <td>-</td>
+              <td>9/24/2025</td>
+              <td>--</td>
+              <td>Active</td>
+              <td>KHS testuser</td>
+              <td>9/24/2025</td>
+            </tr>
+            <tr>
+              <td><a href="#">Select</a></td>
+              <td>LANTUS INJ 100/ML (Generic for LANTUS INJ 100/ML)</td>
+              <td>test</td>
+              <td>9/9/2025</td>
+              <td>--</td>
+              <td>Active</td>
+              <td>KHS testuser</td>
+              <td>9/18/2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="details-grid">
+      <div class="section-header">
+        <h2>Medication Details</h2>
+      </div>
+
+      <form class="med-form" aria-label="Medication details form">
+      <fieldset id="med-form-fieldset" disabled>
+        <div class="field-row">
+          <label for="medication-name">Medication Name & Strength <span class="required">*</span></label>
+          <input id="medication-name" name="medication-name" type="text" placeholder="Start typing, then choose from list" required />
+        </div>
+        <div class="field-row">
+          <label for="diagnosis">Diagnosis/Purpose</label>
+          <input id="diagnosis" name="diagnosis" type="text" placeholder="" />
+        </div>
+
+        <div class="field-row split-3">
+          <div>
+            <label for="dosage">Dosage <span class="required">*</span></label>
+            <input id="dosage" name="dosage" type="text" placeholder="." required />
+          </div>
+          <div>
+            <label for="uom">UOM <span class="required">*</span></label>
+            <select id="uom" name="uom" required>
+              <option value="">Choose...</option>
+              <option>mg</option>
+              <option>mL</option>
+              <option>units</option>
+            </select>
+          </div>
+          <div>
+            <label for="route">Route <span class="required">*</span></label>
+            <input id="route" name="route" type="text" placeholder="." required />
+          </div>
+        </div>
+
+        <div class="field-row split-3">
+          <div>
+            <label for="rx">RX <span class="required">*</span></label>
+            <input id="rx" name="rx" type="text" placeholder="." required />
+          </div>
+          <div>
+            <label for="ndc">National Drug Code (NDC)</label>
+            <input id="ndc" name="ndc" type="text" placeholder="" />
+          </div>
+          <div class="spacer"></div>
+        </div>
+
+        <div class="field-row textarea-row">
+          <label for="prescription">Prescription <span class="required">*</span></label>
+          <textarea id="prescription" name="prescription" rows="4" placeholder="" required></textarea>
+        </div>
+
+        <div class="field-row textarea-row">
+          <label for="additional-instruction">Additional Instruction</label>
+          <textarea id="additional-instruction" name="additional-instruction" rows="4" placeholder=""></textarea>
+        </div>
+
+        <div class="field-row">
+          <label for="prescription-image">Prescription Image</label>
+          <input id="prescription-image" name="prescription-image" type="file" />
+        </div>
+
+        <div class="field-row split-2">
+          <div>
+            <label for="approving-rn">Name of Approving RN, If Any</label>
+            <input id="approving-rn" name="approving-rn" type="text" />
+          </div>
+          <div>
+            <label for="prescribing-physician">Name of Prescribing Physician, If Any</label>
+            <input id="prescribing-physician" name="prescribing-physician" type="text" />
+          </div>
+        </div>
+
+        <div class="field-row split-2">
+          <div>
+            <label for="barcode">Barcode</label>
+            <input id="barcode" name="barcode" type="text" />
+          </div>
+          <div>
+            <label for="physician-number">Physician Number</label>
+            <input id="physician-number" name="physician-number" type="text" />
+          </div>
+        </div>
+
+        <div class="field-row split-2">
+          <div>
+            <label for="previous-barcode">Previous Barcode</label>
+            <input id="previous-barcode" name="previous-barcode" type="text" />
+          </div>
+          <div>
+            <label for="refills">Refills Remaining</label>
+            <input id="refills" name="refills" type="text" />
+          </div>
+        </div>
+
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="psychotropic" /> Psychotropic Medication</label>
+          <label><input type="checkbox" name="controlled" /> Controlled Substance</label>
+          <label><input type="checkbox" name="enable-count" /> Enable Count</label>
+          <label><input type="checkbox" name="enable-alert" /> Enable Change Alert</label>
+          <label><input type="checkbox" name="pharmacy-notification" /> Pharmacy Notification</label>
+        </div>
+
+        <div class="action-row">
+          <button type="button" class="destroy-button">Destroy Medication</button>
+        </div>
+      </fieldset>
+    </form>
+
+      <aside class="sidebar-panel">
+        <button class="report-button">View Med Audit Report</button>
+
+        <section class="insulin-box">
+          <h3>Insulin Instructions</h3>
+          <label class="checkbox-inline"><input type="checkbox" name="insulin-medication" /> Insulin Medication</label>
+        </section>
+
+        <div class="sidebar-checkbox">
+          <label><input type="checkbox" name="hold-medication" /> Set Dates for Holding this Medication Per Doctor's Orders</label>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script>
+    const addButton = document.getElementById('add-button');
+    const saveButton = document.getElementById('save-button');
+    const formFieldset = document.getElementById('med-form-fieldset');
+    const medsTableBody = document.querySelector('.med-list-card tbody');
+
+    function setFormState(enabled) {
+      formFieldset.disabled = !enabled;
+      saveButton.disabled = !enabled;
+      if (enabled) {
+        document.getElementById('medication-name').focus();
+      }
+    }
+
+    function getFormValue(id) {
+      const element = document.getElementById(id);
+      return element ? element.value.trim() : '';
+    }
+
+    function clearForm() {
+      const controls = formFieldset.querySelectorAll('input, select, textarea');
+      controls.forEach((control) => {
+        if (control.type === 'checkbox' || control.type === 'radio') {
+          control.checked = false;
+        } else if (control.type === 'file') {
+          control.value = '';
+        } else {
+          control.value = '';
+        }
+      });
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    addButton.addEventListener('click', () => {
+      clearForm();
+      setFormState(true);
+    });
+
+    saveButton.addEventListener('click', () => {
+      const name = getFormValue('medication-name') || 'New Medication';
+      const prescription = getFormValue('prescription') || '-';
+      const startDate = new Date().toLocaleDateString('en-US');
+      const status = 'Pending';
+      const updatedBy = getFormValue('approving-rn') || 'Unassigned';
+      const updatedOn = startDate;
+
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td><a href="#">Select</a></td>
+        <td>${escapeHtml(name)}</td>
+        <td>${escapeHtml(prescription)}</td>
+        <td>${escapeHtml(startDate)}</td>
+        <td>--</td>
+        <td>${escapeHtml(status)}</td>
+        <td>${escapeHtml(updatedBy)}</td>
+        <td>${escapeHtml(updatedOn)}</td>
+      `;
+
+      medsTableBody.prepend(newRow);
+      setFormState(false);
+    });
+
+    setFormState(false);
+  </script>
+</body>
+</html>

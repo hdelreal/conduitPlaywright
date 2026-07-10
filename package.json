@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test:med": "npx playwright test --project=chromium --headed tests/medication-form.spec.ts",
     "only-user": "npx playwright test --project=chromiumUser --workers=1"
   },
   "keywords": [],
